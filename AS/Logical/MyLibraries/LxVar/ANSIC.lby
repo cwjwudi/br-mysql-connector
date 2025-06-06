@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.7.7.74 SP?>
+<Library Version="1.00.4" SubType="ANSIC" xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>openErrorList.txt</File>
+    <File Description="Exported data types">Types.typ</File>
+    <File Description="Exported constants">Constants.var</File>
+    <File Description="Exported functions and function blocks">LxVar.fun</File>
+    <File Description="获取变量的地址、长度、类型等信息">FB_GetPvInfo.c</File>
+    <File Description="将变量信息获取并输出至外部数据结构中">GetPvOutside.c</File>
+    <File Description="根据地址，数据拼接">DataJoint.c</File>
+    <File Description="根据地址，数据拆分">DataSeparate.c</File>
+    <File Description="判断GetPvInfoUser数组结构有效长度">JudgeSrcPvInfoNum.c</File>
+    <File Description="获取调用此功能块的任务名">FB_GetModuleName.c</File>
+    <File Description="获取局部变量地址信息，可生成字符串信息并生成logger">FB_GetLocalPvAddr.c</File>
+    <File Description="获取变量地址信息，可生成字符串信息并生成logger">FB_GetPvAddrStr.c</File>
+    <File Description="支持局部以及全局的变量列出其包含的成员变量名">FB_GetStruPvMemName.c</File>
+    <File Description="显示变量的地址前后范围的实际数据">FB_ShowPvAddrData.c</File>
+    <File Description="输入地址，显示地址前后一段空间的内存分布">FB_ShowAddrData.c</File>
+    <File Description="显示局部变量的地址范围内内存分配">FB_ShowLocalPvAddrData.c</File>
+    <File Description="基于strlcat实现的缓冲区溢出保护的strcat">Strcats.c</File>
+    <File Description="基于strlcpy实现的缓冲区溢出保护的strcpy">Strcpys.c</File>
+    <File Description="带有最大长度限制的字符串长度统计函数">Strlens.c</File>
+    <File Description="将UDINT类型数据转换为STRING">FB_Udint2Str.c</File>
+    <File Description="带有小数点限制的REAL数据转换">FB_Real2Str.cc</File>
+    <File Description="带有小数点限制的LREAL数据转换">FB_LReal2Str.cc</File>
+    <File Description="在System中写Logger函数">VarWarnLogWrite.c</File>
+    <File Description="在System中写Logger函数，PLC进入SERV">VarServLogWrite.c</File>
+    <File Description="十进制数据转换为十六进制字符串数据">FB_Dec2Hex.cc</File>
+    <File Description="十六进制字符串数据转换为十进制数据">FB_Hex2Dec.cc</File>
+    <File Description="输入变量，判断是否为基本数据类型，如果不是，则返回下一级信息">FB_GetPvEntireName.c</File>
+    <File Description="可获得变量地址信息，如果找不到，则进入SERV">ReturnPvAddr.c</File>
+    <File Description="可具有保护的,用于连续strcat操作的函数,避免负载过高">FB_ContinualStrcat.c</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="AsBrStr" />
+    <Dependency ObjectName="sys_lib" />
+  </Dependencies>
+</Library>

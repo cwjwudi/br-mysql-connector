@@ -1,0 +1,12 @@
+VAR
+	InsCfg : REFERENCE TO MySQLInserterConfig_typ;
+	InsSts : REFERENCE TO MySQLInserterStatus_typ;
+	InsInter : REFERENCE TO MySQLInserterInternal_typ;
+	InsInput : REFERENCE TO MySQLInserterInput_typ;
+	InsCmd : REFERENCE TO MySQLInserterCommand_typ;
+	u8idx : USINT;
+	strBuffer : ARRAY[0..TASK_SIZE_MINUS_ONE] OF STRING[CMD_STR_SIZE];
+	RTInfo_0 : RTInfo;
+	accTimeUs : ARRAY[0..TASK_SIZE_MINUS_ONE] OF UDINT;
+	firstScan : BOOL;
+END_VAR

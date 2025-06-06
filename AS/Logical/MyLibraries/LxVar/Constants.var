@@ -1,0 +1,6 @@
+VAR CONSTANT
+	GET_STRU_PV_NAME_SIZE : UINT := 200; (*获取成员变量名的数组空间大小*)
+	MODULE_PV_NAME_STR_SIZE : USINT := 107; (*包含 [ 任务名 : 变量名 ] 的字符串大小*)
+	NAME_STR_SIZE : USINT := 65; (*包含 [ 变量名 ] 的字符串大小*)
+	SHOW_LOCAL_PV_ADDR_SIZE : USINT := 80; (*显示局部变量地址实际USINT字节映射的缓存数组大小*)
+END_VAR

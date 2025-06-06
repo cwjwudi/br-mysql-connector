@@ -1,0 +1,69 @@
+VarHandleY:
+7001:读取的变量为枚举类型
+7002:DataJoint接收的指针为NULL
+7003:传入DataJoint的SrcPvInfo数据丢失
+7004:DataJoint拼接数据流超出设定的Buffer。
+7005:DataSeperate接收的指针为NULL
+7006:传入DataSeperate的SrcPvInfo数据丢失
+7007:DataSeperate解析分割数据流超出设定的Buffer。
+7008：JudgeSrcPvInfoNumY被传入的地址为空
+7009: JudgeSrcPvInfoNumY被传入的数据所占空间为空
+
+XmlFileY:
+8001: TranGetPv2PLKPre收到的两个指针为空
+8002: TranGetPv2PLKPre收到的两个长度为0
+8003: TranGetPv2PLKPre在判断GetPvInfo的有效数据长度为0
+8004：TranGetPv2PLKPre接收到的PLKPre数组内容超限，不能再记录更多数据，请扩展PLKPre数组长度。
+8005:TranGetPv2PLKPre在转换数据流udIndex数据过大 >99999
+8006:TranGetPv2PLKPre在转换数据流pStruPvInfo->sName为空
+8007:TranGetPv2PLKPre在转换数据流pStruPvInfo->sDataType为空
+8008:TranGetPv2PLKPre在转换数据流udLenth数据过大 >99999
+8009:TranGetPv2PLKPre在转换数据流udLenth为0
+8010：JudgePLKPreNum被传入的地址为空
+8011: JudgePLKPreNum被传入的数据所占空间为空
+
+8012: TranPLKPre2GetPv收到的两个指针为空
+8013: TranPLKPre2GetPv收到的两个长度为0
+8014: TranPLKPre2GetPv在判断PLKPre的有效数据长度为0 
+8015：TranPLKPre2GetPv接收到的GetPvInfo数组内容超限，不能再记录更多数据，请扩展GetPvInfo数组长度。
+8016:TranPLKPre2GetPv在转换得到的数据流PLKPreDataUser.sIndex为空数据
+8017:TranPLKPre2GetPv在转换得到的数据流udIndex数据过大 >99999 或过小 < 0
+8018:TranPLKPre2GetPv在转换数据流pStruPreData->sName为空
+8019:TranPLKPre2GetPv在转换数据流pStruPreData->sDataType为空
+8020:TranPLKPre2GetPv在转换得到的数据流PLKPreDataUser.sDataLen为空数据
+8021:TranPLKPre2GetPv在转换得到的数据流udDataLen数据过大 >99999 或过小 < 0
+8022:TranPLKPre2GetPv在转换得到的数据流udIndex数据与实际索引不匹配
+
+8023:PLKPreDataWrite得到的指针存在为空
+8024:PLKPreDataWrite接受的到数组范围值存在为0
+8025:PLKPreDataWrite接受的文件名以及设备名存在空
+8026:PLKPreDataWrite收到的PLKPreData源数据有效数据长度为0
+8027:PLKPreDataWrite在STEP3.1进行XML分配内存出错
+8028:PLKPreDataWrite在STEP3.2进行XML文件头创建出错
+8029:PLKPreDataWrite在STEP3.3进行创建头信息PLKPreData出错
+8030:PLKPreDataWrite在STEP3.4.2进行元素头编写出错
+8031:PLKPreDataWrite在STEP3.4.3进行元素Index属性赋值出错
+8032:PLKPreDataWrite在STEP3.4.3进行元素ModuleName属性赋值出错
+8033:PLKPreDataWrite在STEP3.4.3进行元素Name属性赋值出错
+8034:PLKPreDataWrite在STEP3.4.3进行元素DataType属性赋值出错
+8035:PLKPreDataWrite在STEP3.4.3进行元素DataLen属性赋值出错
+8036:PLKPreDataWrite在STEP3.4.4进行关闭Data元素出错
+8037:PLKPreDataWrite在STEP3.3.1进行关闭PLKPreData元素出错
+8038:PLKPreDataWrite在STEP3.2.1进行关闭XML文档出错
+8039:PLKPreDataWrite在STEP3.5进行XML文件内存信息获取出错
+8040:PLKPreDataWrite在STEP4进行进行文件写操作出错
+
+8041:PLKPreDataRead接收到的指针存在空。
+8042:PLKPreDataRead接收到的值的长度范围存在空。
+8043:PLKPreDataRead在STEP 2 FileInfo文件失败。
+8045:PLKPreDataRead在STEP 3 FileReadY文件失败
+8046:PLKPreDataRead在STEP 4.1 xmlCreateMemoryReader失败
+8047:PLKPreDataRead在STEP 4.3 xmlReadNextNode失败
+8048：PLKPreDataRead在STEP 4.3.2 xmlReadAttributeNr读取失败
+8049：PLKPreDataRead在STEP 4.5内存读取关闭出错
+8050：PLKPreDataRead在STEP 4.3.3读取的Node数据超过可容纳上限。请增大pPLKPreData对应的数组长度
+8051：PLKPreDataRead在STEP4.3.0 Node真正需要的Name与Size数据空间大小过小
+8052：PLKPreDataRead在STEP4.3.2.1 Attr真正需要的Name与Size数据空间大小过小
+
+
+

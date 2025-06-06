@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<OpcUaSource FileVersion="9" ArVersion="I4.93">
+  <Aliases>
+    <ACLAliases />
+    <EURangeViolationAliases />
+    <EURangesAliases />
+    <EngineeringUnitAliases />
+  </Aliases>
+  <DefaultView>
+    <Module Name="&lt;Default&gt;">
+      <GlobalVariables Name="Global Variables">
+        <Variable Name="gMySQLInserter">
+          <Variable Name="_Internal">
+            <Variable Name="TaskCmdStr" RecursiveEnable="2" />
+          </Variable>
+          <Variable Name="ExternalCom">
+            <Variable Name="StrCmd" RecursiveEnable="2" />
+            <Variable Name="Counter" RecursiveEnable="2" />
+            <Variable Name="HeartBeat" RecursiveEnable="2" />
+          </Variable>
+        </Variable>
+      </GlobalVariables>
+    </Module>
+  </DefaultView>
+</OpcUaSource>

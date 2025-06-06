@@ -1,0 +1,67 @@
+# Python编译产物和缓存
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+*.egg
+.python-version
+
+# 虚拟环境
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# PyCharm IDE配置
+.idea/
+.idea_modules/
+*.iml
+*.ipr
+*.iws
+
+# 单元测试/覆盖率报告
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+htmlcov/
+
+# 日志和数据库
+*.log
+*.sqlite
+*.sqlite3
+*.sqlite-journal
+
+# 包构建和分发
+build/
+dist/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.manifest
+*.spec
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# 敏感数据
+.env
+.secrets
+local_settings.py
+config.py

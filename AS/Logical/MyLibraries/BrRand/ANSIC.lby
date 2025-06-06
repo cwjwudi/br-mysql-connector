@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library Version="1.00.4" SubType="ANSIC" Description="Random Value Generate" xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File Description="Exported data types">BrRand.typ</File>
+    <File Description="Exported constants">BrRand.var</File>
+    <File Description="随机数生成库">BrRand.fun</File>
+    <File Description="随机数基础函数">RandomBase.c</File>
+    <File Description="随机数范围函数">RandRange.c</File>
+    <File Description="输出BOOL随机数">RandBOOL.c</File>
+    <File Description="输出USINT随机数">RandUSINT.c</File>
+    <File Description="输出SINT随机数">RandSINT.c</File>
+    <File Description="输出UINT随机数">RandUINT.c</File>
+    <File Description="输出INT随机数">RandINT.c</File>
+    <File Description="输出UDINT随机数">RandUDINT.c</File>
+    <File Description="输出DINT随机数">RandDINT.c</File>
+    <File Description="输出REAL随机数">RandREAL.c</File>
+    <File Description="输出LREAL随机数">RandLREAL.c</File>
+    <File Description="设定范围产生无符号整型随机数">RandRangeUnsigned.c</File>
+    <File Description="设定范围产生有符号整型随机数">RandRangeSigned.c</File>
+    <File Description="设定范围产生浮点类型随机数">RandRangeReal.c</File>
+    <File Description="Sync生成随机字符串">FB_RandString.c</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="sys_lib" />
+  </Dependencies>
+</Library>
