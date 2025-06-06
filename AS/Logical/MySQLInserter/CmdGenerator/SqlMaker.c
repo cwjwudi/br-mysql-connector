@@ -159,6 +159,11 @@ void MakeCreateTableSql(STRING* sqlBuffer, UDINT bufferSize, TaskSetting_typ* ta
 	strcat((char*)sqlBuffer, ");");
 }
 
+/**
+ * @brief 此函数来自 https://github.com/kmontreal-hub/MySQL-Connector-/tree/main。
+ *
+ * 该函数的具体功能和用法请参考上述项目的相关文档和源代码。
+ */
 UDINT CreateMySQLDateTimeStamp(STRING *pOutputString)
 {
 	STRING tempString[10];
