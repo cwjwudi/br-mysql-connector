@@ -52,18 +52,42 @@ BR Mysql Connector 是一个用于在 B&R PLC 与 MySQL 数据库之间进行数
 - 配置 `gMySQLInserter.Config`，如数据库名、表名、采集周期、数据映射等（详见 [`AS/Logical/MySQLInserter/Demo/Main.st`](AS/Logical/MySQLInserter/Demo/Main.st)）。
 - 下载并运行程序。
 
-### 2. PC 端
+### 2. PC 端C++版
 
-- 安装 MySQL。
-- 准备PC端工程（也可以直接下载编译好的C++程序、使用Python程序，或按照如下自行编译）。
+- 安装 MySQL，并创建案例数据库。
+
+  ```mysql
+  CREATE DATABASE IF NOT EXISTS wn_8;
+  CREATE DATABASE IF NOT EXISTS wn_9;
+  ```
+- 修改`CMakeList.txt`包含的MySQL头文件、库文件路径。
+- 编译程序（也可以直接下载编译好的C++程序）。
+
   ```bash
   cd CPP 
   mkdir build & cd build
   cmake ..
   make .
   ```
-- 准备 `cfg.json` 配置文件（Python版请直接编辑文件），包含数据库连接信息、Opuca配置等。
-- 执行PC端程序。
+- 准备 `cfg.json` 配置文件，包含数据库连接信息、Opuca配置等。与exe文件放置于同级目录。
+- 执行C++程序。
+
+### 3. PC端Python版
+
+* 安装 MySQL，并创建案例数据库。
+
+  ```mysql
+  CREATE DATABASE IF NOT EXISTS wn_8;
+  CREATE DATABASE IF NOT EXISTS wn_9;
+  ```
+* 安装依赖库
+
+  ```bash
+  pip install mysql-connector-python
+  pip install opcua
+  ```
+* 修改`SqlRepeater.py`中的`MYSQL`和`OPCUA`配置，包含数据库连接信息、Opcua配置等。
+* 执行Python程序
 
 ## 依赖
 
