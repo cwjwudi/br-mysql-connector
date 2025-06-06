@@ -91,7 +91,7 @@ BR Mysql Connector 是一个用于在 B&R PLC 与 MySQL 数据库之间进行数
 
 ## 依赖
 
-- B&R Automation Studio
+- B&R Automation Studio 4.12
 - MySQL 数据库
 - C++11 及以上编译器 / Python 3.8及以上解释器
 
