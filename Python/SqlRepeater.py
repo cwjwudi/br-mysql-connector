@@ -12,8 +12,8 @@ from datetime import datetime
 
 # ===== 配置部分 =====
 OPCUA_SERVER_URL = "opc.tcp://192.168.0.200:4840"
-OPCUA_READ_NODE_ID = "ns=6;s=::sql_writer:rec_data.InsertCmd"
-OPCUA_WRITE_NODE_ID = "ns=6;s=::AsGlobalPV:gSqlExtSts"
+OPCUA_READ_NODE_ID = "ns=6;s=::AsGlobalPV:gMySQLInserter.ExternalCom.StrCmd[0]"
+OPCUA_WRITE_NODE_ID = "ns=6;s=::AsGlobalPV:gMySQLInserter.ExternalCom.Counter[0]"
 
 MYSQL_CONFIG = {
     "host": "localhost",
