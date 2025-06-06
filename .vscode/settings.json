@@ -1,0 +1,6 @@
+{
+    "cmake.sourceDirectory": "D:/projects/50_/br-mysql-connector/CPP",
+    "cmake.buildDirectory": "D:/projects/50_/br-mysql-connector/CPP/build",
+    // "python.pythonPath" 已被弃用，VS Code 现在使用 "python.defaultInterpreterPath"
+    "python.defaultInterpreterPath": "D:/ProgramFiles/Miniconda3/envs/testSQL/python.exe"
+}
