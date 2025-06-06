@@ -1,11 +1,7 @@
 import threading
 import queue
-import time
 import mysql.connector
 from opcua import Client
-from opcua.ua import uatypes
-from opcua.common.subscription import SubHandler
-from opcua.ua import Variant, VariantType
 from opcua import ua
 from datetime import datetime
 
@@ -13,21 +9,23 @@ from datetime import datetime
 # ===== 配置部分 =====
 OPCUA_SERVER_URL = "opc.tcp://192.168.0.200:4840"
 OPCUA_READ_NODE_ID = "ns=6;s=::AsGlobalPV:gMySQLInserter.ExternalCom.StrCmd[0]"
-OPCUA_WRITE_NODE_ID = "ns=6;s=::AsGlobalPV:gMySQLInserter.ExternalCom.Counter[0]"
+OPCUA_COUNTER_NODE_ID = "ns=6;s=::AsGlobalPV:gMySQLInserter.ExternalCom.Counter[0]"
+OPCUA_HEARTBEAT_NODE_ID = "ns=6;s=::AsGlobalPV:gMySQLInserter.ExternalCom.HeartBeat[0]"
 
 MYSQL_CONFIG = {
-    "host": "localhost",
-    "user": "root",
+    "host": "192.168.0.100",
+    "user": "user1",
     "password": "123456",
     "database": "wn_9"
 }
 
-DISP_NUMBER = 30  # 显示的字符数
+DISP_NUMBER = 1000  # 显示的字符数
 
 # ===== 全局资源 =====
 data_queue = queue.Queue(maxsize=100)  # 线程安全队列，限制大小防止内存溢出
 stop_event = threading.Event()  # 停止事件通知
-heartbeat = 0
+counter = 0
+heartbeat = 0  # 心跳计数器
 response_server = False
 
 
@@ -96,24 +94,36 @@ class OpcUaWriteThread(threading.Thread):
 
     # 处理要做的业务逻辑
     def run(self):
-        global heartbeat, response_server
+        global counter, response_server
+        oldHeartBeat = 0
+        heartbeat = 0
         while  self.working:
             try:
                 client = Client(OPCUA_SERVER_URL)
                 client.connect()
                 root = client.get_root_node()
-                tmpWrite1 = client.get_node(OPCUA_WRITE_NODE_ID) # Write为全局变量名
+                counterWriter = client.get_node(OPCUA_COUNTER_NODE_ID) # Write为全局变量名
+                heartbeatWriter = client.get_node(OPCUA_HEARTBEAT_NODE_ID) # 心跳变量  
+
                 #####################          要赋值的变量在这里进行操作           #######################
                 while True:
                     if response_server == True:
                         response_server = False
-                        heartbeat = heartbeat + 1
+                        counter = counter + 1
+                        data_send1 = ua.DataValue()
+                        data_send1.Value = ua.Variant(counter, ua.VariantType.UInt32)
+                        counterWriter.set_value(data_send1)
 
-                        data_send = ua.DataValue()
-                        data_send.Value = ua.Variant(heartbeat, ua.VariantType.UInt32)
+                    if (heartbeat - oldHeartBeat) > 10:
+                        data_send2 = ua.DataValue()
+                        data_send2.Value = ua.Variant(heartbeat, ua.VariantType.UInt32)
+                        heartbeatWriter.set_value(data_send2)
+                        oldHeartBeat = heartbeat
 
-                        tmpWrite1.set_value(data_send)
+                    heartbeat = heartbeat + 1
+
                     stop_event.wait(0.2)
+                    
 
             except Exception as e:
                 print(e)
@@ -159,7 +169,7 @@ class DbWorker(threading.Thread):
                 )
                 self.conn.commit()
                 value = extract_values_suffix(data, DISP_NUMBER)
-                print(f"插入成功: {value}")
+                print(f"插入成功: {data}")
         except mysql.connector.Error as e:
             with open('database_err.txt', 'a') as file:
                 current_time = datetime.now()
