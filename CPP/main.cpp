@@ -112,7 +112,7 @@ void readOpcUaString(UA_Client *client, std::atomic<uint32_t> &counter, std::deq
 }
 
 void executeSqlString(std::deque<std::string> &cmdQueue, std::mutex &mtx, bool &done, MYSQL *conn) {
-    while (!done)
+    while (!done)  // Continue until done and queue is empty
     {
         std::string sqlCommand;
         {
@@ -258,6 +258,20 @@ int main() {
         std::cout << "Waiting for all commands to be executed..." << std::endl;
         std::lock_guard<std::mutex> lock(mtx);
         std::cout << "Remaining commands in queue: " << cmdQueue.size() << std::endl;
+        // execute the leftover commands
+        if (!cmdQueue.empty()) {
+            std::string sqlCommand = cmdQueue.front();
+            cmdQueue.pop_front();
+            if (!sqlCommand.empty()) {
+                std::cout << "Executing SQL Command: " << sqlCommand << std::endl;
+                if (mysql_query(conn, sqlCommand.c_str())) {
+                    std::cerr << "SQL execution failed: " << mysql_error(conn) << std::endl;
+                } else {
+                    std::cout << "SQL executed successfully." << std::endl;
+                }
+            }
+        }
+
         std::this_thread::sleep_for(std::chrono::milliseconds(100));
     }
 
@@ -275,6 +289,9 @@ int main() {
 
     // 线程结束后关闭数据库连接
     mysql_close(conn);
+
+    std::cout << "Press any key to exit..." << std::endl;
+    std::cin.get();
 
     return EXIT_SUCCESS;
 }
