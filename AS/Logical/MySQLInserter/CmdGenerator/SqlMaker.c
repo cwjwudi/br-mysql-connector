@@ -61,9 +61,18 @@ void MakeInsertSql(STRING* sqlBuffer, UDINT bufferSize, TaskSetting_typ* taskSet
 		}	
 		else if (strcmp(taskSetting->DataSetting[i].Type, "INT") == 0) {
 			// Type is INT
+			// is it a missing check?
 			if (1 == taskSetting->DataSetting[i].MissingCheck) {
 				*(DINT*)taskSetting->DataSetting[i].DataAddr += 1;
 			}
+
+			// is it a millisec?
+			if (1 == taskSetting->DataSetting[i].Millisec) {
+				RTCtime_typ	RTC;
+				RTC_gettime(&RTC);
+				*(DINT*)taskSetting->DataSetting[i].DataAddr = (DINT)RTC.millisec;
+			}
+			
 			itoa(*(DINT*)taskSetting->DataSetting[i].DataAddr, (UDINT)tempStr);
 			strcat((char*)sqlBuffer, (char*)tempStr);
 		}
@@ -160,9 +169,8 @@ void MakeCreateTableSql(STRING* sqlBuffer, UDINT bufferSize, TaskSetting_typ* ta
 }
 
 /**
- * @brief 此函数来自 https://github.com/kmontreal-hub/MySQL-Connector-/tree/main。
+ * @brief The following function comes from https://github.com/kmontreal-hub/MySQL-Connector-/tree/main .
  *
- * 该函数的具体功能和用法请参考上述项目的相关文档和源代码。
  */
 UDINT CreateMySQLDateTimeStamp(STRING *pOutputString)
 {

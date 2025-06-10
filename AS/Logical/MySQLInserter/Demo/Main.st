@@ -59,12 +59,12 @@ PROGRAM _INIT
 	gMySQLInserter.Config.TaskSetting[2].DataSetting[2].DataSize := SIZEOF(TimeStamp);
 	gMySQLInserter.Config.TaskSetting[2].DataSetting[2].ManualTime := FALSE; // 自动模式，实际用不到本地TimeStamp
 
-	// F1 ~ F15
-	gMySQLInserter.Config.TaskSetting[2].DataSetting[3].DataAddr := ADR(F1);
-	gMySQLInserter.Config.TaskSetting[2].DataSetting[3].Name := 'F1';
-	gMySQLInserter.Config.TaskSetting[2].DataSetting[3].Type := 'FLOAT';
-	gMySQLInserter.Config.TaskSetting[2].DataSetting[3].Digital := 3;
-
+	
+	gMySQLInserter.Config.TaskSetting[2].DataSetting[3].DataAddr := ADR(Millsec);
+	gMySQLInserter.Config.TaskSetting[2].DataSetting[3].Name := 'Millsec';
+	gMySQLInserter.Config.TaskSetting[2].DataSetting[3].Type := 'INT';
+	gMySQLInserter.Config.TaskSetting[2].DataSetting[3].Millisec := TRUE;
+	// F2 ~ F15
 	gMySQLInserter.Config.TaskSetting[2].DataSetting[4].DataAddr := ADR(F2);
 	gMySQLInserter.Config.TaskSetting[2].DataSetting[4].Name := 'F2';
 	gMySQLInserter.Config.TaskSetting[2].DataSetting[4].Type := 'FLOAT';
@@ -445,6 +445,11 @@ PROGRAM _INIT
 	gMySQLInserter.Config.TaskSetting[2].DataSetting[78].Name := 'WT';
 	gMySQLInserter.Config.TaskSetting[2].DataSetting[78].Type := 'FLOAT';
 	gMySQLInserter.Config.TaskSetting[2].DataSetting[78].Digital := 3;
+
+	gMySQLInserter.Config.TaskSetting[2].DataSetting[79].DataAddr := ADR(F1);
+	gMySQLInserter.Config.TaskSetting[2].DataSetting[79].Name := 'F1';
+	gMySQLInserter.Config.TaskSetting[2].DataSetting[79].Type := 'FLOAT';
+	gMySQLInserter.Config.TaskSetting[2].DataSetting[79].Digital := 3;
 
 	
 END_PROGRAM

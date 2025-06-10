@@ -8,6 +8,7 @@ VAR
 	ID : DINT;
 	STATE : DINT;
 	TimeStamp : STRING[32];
+	Millsec : DINT;
 	CV : REAL;
 	VPF : REAL;
 	WT : REAL;

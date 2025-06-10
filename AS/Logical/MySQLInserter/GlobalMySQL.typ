@@ -48,6 +48,7 @@ TYPE
 		AutoIncrement : BOOL; (*mysql属性AUTO_INCREMENT*)
 		NotNull : BOOL; (*mysql属性NOT NULL*)
 		PrimaryKey : BOOL; (*mysql属性PRIMARY KEY*)
+		Millisec : BOOL; (*该数据是否用于记录ms*)
 	END_STRUCT;
 	MySQLInserterTask_typ : 	STRUCT 
 		Setting : TaskSetting_typ;
