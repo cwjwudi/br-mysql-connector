@@ -23,7 +23,7 @@ void _CYCLIC ProgramCyclic(void)
 		return;
 	}
 	
-	if (InsCmd->Reset) {
+	if (1 == InsCmd->Reset && 0 == oldReset ) {
 		step = 0;
 	}
 	
@@ -31,9 +31,7 @@ void _CYCLIC ProgramCyclic(void)
 		case 0:
 			// ³õÊ¼»¯Deque
 			initDeque(&sqlDeque1);
-			
 			memset(tempStr, 0, sizeof(tempStr));
-			strcat(tempStr, "CREATE");
 			step = 1;
 			break;
 		case 1:
@@ -114,6 +112,9 @@ void _CYCLIC ProgramCyclic(void)
 	}
 	
 	InsSts->BufferNum[INTERFACE_IDX] = sqlDeque1.size;
+	
+	oldReset = InsCmd->Reset;
+	
 	// FB CALL
 	TON(&ton_0);
 	TON(&ton_con);
