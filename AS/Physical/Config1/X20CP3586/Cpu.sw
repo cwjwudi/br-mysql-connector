@@ -8,6 +8,8 @@
     <Task Name="CmdGenerat" Source="MySQLInserter.CmdGenerator.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
     <Task Name="Demo" Source="MySQLInserter.Demo.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="SqlWriter" Source="MySQLInserter.SqlWriter.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
+    <Task Name="mappDB" Source="mappDatabase.mappDB.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="RecipeSamp" Source="mappDatabase.RecipeSample.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#5" />
   <TaskClass Name="Cyclic#6" />
@@ -32,10 +34,17 @@
     <LibraryObject Name="runtime" Source="Libraries.runtime.lby" Memory="UserROM" Language="binary" Debugging="true" />
     <LibraryObject Name="LxVar" Source="MyLibraries.LxVar.lby" Memory="UserROM" Language="ANSIC" Debugging="true" />
     <LibraryObject Name="asstring" Source="Libraries.asstring.lby" Memory="UserROM" Language="binary" Debugging="true" />
-    <LibraryObject Name="astime" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
-    <LibraryObject Name="asieccon" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="BrRand" Source="MyLibraries.BrRand.lby" Memory="UserROM" Language="ANSIC" Debugging="true" />
     <LibraryObject Name="brsystem" Source="Libraries.brsystem.lby" Memory="UserROM" Language="binary" Debugging="true" />
     <LibraryObject Name="standard" Source="Libraries.standard.lby" Memory="UserROM" Language="binary" Debugging="true" />
+    <LibraryObject Name="MpDatabase" Source="Libraries.MpDatabase.lby" Memory="UserROM" Language="Binary" Debugging="true" />
+    <LibraryObject Name="MpBase" Source="Libraries.MpBase.lby" Memory="UserROM" Language="Binary" Debugging="true" />
+    <LibraryObject Name="AsHttp" Source="Libraries.AsHttp.lby" Memory="UserROM" Language="binary" Debugging="true" />
+    <LibraryObject Name="astime" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
+    <LibraryObject Name="asieccon" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
+    <LibraryObject Name="MpCfg" Source="Libraries.MpCfg.lby" Memory="UserROM" Language="IEC" Debugging="true" />
+    <LibraryObject Name="FileIO" Source="Libraries.FileIO.lby" Memory="UserROM" Language="binary" Debugging="true" />
+    <LibraryObject Name="MpCom" Source="Libraries.MpCom.lby" Memory="UserROM" Language="Binary" Debugging="true" />
+    <LibraryObject Name="AsICMP" Source="Libraries.AsICMP.lby" Memory="UserROM" Language="binary" Debugging="true" />
   </Libraries>
 </SwConfiguration>

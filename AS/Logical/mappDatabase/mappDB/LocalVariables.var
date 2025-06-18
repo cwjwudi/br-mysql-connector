@@ -1,0 +1,35 @@
+(*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*)
+(*SQL function calls*)
+VAR
+	MpDatabaseCore_0 : MpDatabaseCore; (*mappDatabase main function block*)
+	MpDatabaseQuery_0 : MpDatabaseQuery; (*mappDatabase query*)
+END_VAR
+(*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*)
+VAR
+	MpCfgRW_01 : MpCfgRW; (*Functionblock for mapp configuration read/write*)
+	IcmpPing_0 : IcmpPing; (*Ping network share*)
+	PingTimer : TON_10ms;
+	PING_TIMEOUT : UINT := 200; (*Timeout for ping response*)
+END_VAR
+(*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*)
+(*Local variables*)
+VAR
+	SqlTimeout : TON_10ms; (*Timeout for SQL commands*)
+	dbState : dbState_Enum; (*State machine*)
+END_VAR
+(*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*)
+(*Configuration for database managment*)
+VAR CONSTANT
+	TIMEOUT : UINT := 500; (*Timeout for SQL connection and query, default is 500=>5s*)
+END_VAR
+(*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*)
+(*Local constants*)
+VAR CONSTANT
+	ERR_SQL_TIMEOUT_CONNECT : UINT := 10000; (*Timeout error for SQL connection*)
+	ERR_SQL_TIMEOUT_QUERY : UINT := 10001; (*Timeout error for SQL query*)
+	ERR_SQL_NOT_CONNECTED : UINT := 10010; (*Can not execute when not connected*)
+END_VAR
+(*My test*)
+VAR
+	RecFloat : ARRAY[0..36000] OF REAL;
+END_VAR

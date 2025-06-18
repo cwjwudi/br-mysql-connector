@@ -20,6 +20,7 @@
             <Variable Name="HeartBeat" RecursiveEnable="2" />
           </Variable>
         </Variable>
+        <Variable Name="gSqlStr" />
       </GlobalVariables>
     </Module>
   </DefaultView>

@@ -1,0 +1,17 @@
+Version 1.2 (10.02.2023)
+- PythonScript: Support for MS SQL data type decimal
+
+Version 1.1 (05.01.2022)
+- Added script server ping
+- PLC: Update to runtime E4.90 and mapp 5.16
+- PythonScript: Added PLC raw data to debug output
+
+Version 1.0 (18.08.2021)
+- PythonScript: Added more and detailed debug output
+- PythonScript: Added more and detailed error messages
+- PythonScript: Print all SQL queries and server response details
+- PythonScript: Trim data type string when reading from database
+- PythonScript: Change MsSQL database provider to 'ODBC Driver 17 for SQL Server' to support Linux systems
+- PythonScript: Removed dependency from MySql driver for data conversion. Removed dependecy from MySql driver for data conversion. It is no longer required to install MySQL driver when using MsSQL.
+
+

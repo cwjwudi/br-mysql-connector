@@ -7,5 +7,6 @@
     <Object Type="Package" Description="Global libraries">Libraries</Object>
     <Object Type="Package">MySQLInserter</Object>
     <Object Type="Package">MyLibraries</Object>
+    <Object Type="Package">mappDatabase</Object>
   </Objects>
 </Package>

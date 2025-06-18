@@ -1,4 +1,6 @@
 VAR
+	test1 : ARRAY[0..36000] OF DINT;
+	New_Variable : ARRAY[0..36000] OF REAL;
 	IP1 : DINT;
 	IP2 : DINT;
 	FP2 : REAL;

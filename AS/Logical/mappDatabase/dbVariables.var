@@ -1,0 +1,5 @@
+VAR
+	Database : dbMAIN; (*Database main structure*)
+	Recipe : recMAIN; (*Recipe sample structure*)
+	gSqlStr : STRING[500];
+END_VAR

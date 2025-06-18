@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library Version="5.24.3" SubType="Binary" Description="Interface to SQL database" xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>MpDatabase.typ</File>
+    <File>MpDatabaseError.typ</File>
+    <File>MpDatabase.fun</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="MpBase" FromVersion="5.24.1" ToVersion="5.24.8" />
+    <Dependency ObjectName="AsHttp" />
+  </Dependencies>
+</Library>

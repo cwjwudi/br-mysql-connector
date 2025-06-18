@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Configuration>
+  <Element ID="gDatabaseCore" Type="mpdatabasecore">
+    <Group ID="mapp.Database.Core">
+      <Property ID="Name" Value="wn_9" />
+      <Property ID="UserName" Value="newuser" />
+      <Property ID="Password" Value="123456" />
+      <Property ID="PortNumber" Value="85" />
+      <Group ID="DBQueries">
+        <Group ID="[0]">
+          <Property ID="Name" Value="ReadInt" />
+          <Selector ID="Type" Value="Custom">
+            <Property ID="Query" Value="{&amp;pv[gSqlStr]}" />
+            <Selector ID="Columns" Value="SingleColumns" />
+          </Selector>
+        </Group>
+        <Group ID="[1]">
+          <Property ID="Name" Value="ReadFloat" />
+          <Selector ID="Type" Value="Custom">
+            <Property ID="Query" Value="{&amp;pv[gSqlStr]}" />
+            <Selector ID="Columns" Value="SingleColumns">
+              <Group ID="[0]">
+                <Property ID="Column" Value="F1" />
+                <Property ID="PV" Value="::mappDB:RecFloat[]" />
+              </Group>
+              <Group ID="[1]">
+                <Property ID="Column" Value="F2" />
+                <Property ID="PV" Value="::mappDB:RecFloat[]" />
+              </Group>
+            </Selector>
+          </Selector>
+        </Group>
+      </Group>
+    </Group>
+  </Element>
+</Configuration>

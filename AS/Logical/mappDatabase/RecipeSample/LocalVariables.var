@@ -1,0 +1,3 @@
+VAR
+	idx : USINT;
+END_VAR
