@@ -10,6 +10,7 @@
     <Task Name="SqlWriter" Source="MySQLInserter.SqlWriter.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
     <Task Name="mappDB" Source="mappDatabase.mappDB.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="RecipeSamp" Source="mappDatabase.RecipeSample.prg" Memory="UserROM" Language="IEC" Debugging="true" Disabled="true" />
+    <Task Name="SqlReader" Source="mappDatabase.SqlReader.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#5" />
   <TaskClass Name="Cyclic#6" />

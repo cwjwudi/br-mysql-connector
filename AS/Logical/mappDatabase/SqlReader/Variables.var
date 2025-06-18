@@ -1,0 +1,7 @@
+VAR CONSTANT
+	MAX_INT_NUM : UINT := 37000;
+	MAX_FLOAT_NUM : UINT := 37000;
+END_VAR
+VAR
+	RdBuffer : RdBuffer_typ;
+END_VAR

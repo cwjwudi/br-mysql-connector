@@ -19,7 +19,6 @@ PROGRAM _INIT
 END_PROGRAM
 
 PROGRAM _CYCLIC
-	gSqlStr;
 		// Trigger ping request
 	PingTimer.IN := TRUE;
 	PingTimer.PT := PING_TIMEOUT;

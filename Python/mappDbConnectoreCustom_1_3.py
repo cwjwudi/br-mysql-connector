@@ -367,14 +367,31 @@ class DB:
 				print('Query response: ' + str(data))
 			else:
 				print('Query response with ' + str(len(data)) + ' total rows')
-
+				# Uncomment the following lines to print the response data
+				"""
 				for row in data:
 					i = 0
 					for field in row:
 						print(str(column_names[i]) + ': ' + str(field).strip())
 						i = i + 1
 					print('------------------------------------------------------------------------------')
-
+				"""
+			print(type(data))
+			# convert column names to a list to allow modification
+			column_names = list(column_names)
+			# convert column names by its data type
+			try:
+				for i in range(len(data[0])):
+					if isinstance(data[0][i], int):
+						column_names[i] = 'rdInt' + str(i + 1)
+					elif isinstance(data[0][i], float):
+						column_names[i] = 'rdFloat' + str(i + 1)
+					else:
+						pass
+			except:
+				pass
+			# convert column names to a tuple for json response
+			column_names = tuple(column_names)
 			response = sqlToJson(column_names, data, cursor.description)
 
 		self._cnx.commit()

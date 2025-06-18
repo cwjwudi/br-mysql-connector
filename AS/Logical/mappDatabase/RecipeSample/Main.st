@@ -2,9 +2,6 @@ PROGRAM _INIT
 END_PROGRAM
 
 PROGRAM _CYCLIC
-	gSqlStr;
-	RecDatas;
-	milk;
 	// Generate a list with all recipe names
 	IF EDGEPOS(Database.PAR.IsConnected) THEN
 		Recipe.CMD.List := TRUE;
